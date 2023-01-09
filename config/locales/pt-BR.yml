@@ -1,0 +1,21 @@
+pt-BR:
+
+  description: "Produto"
+  current_locale: "Portugues do Brasil"
+  welcome: "Bem Vindo!"
+  
+  messages: 
+    confirm: "Você tem certeza ?"
+    menu: "Selecione uma das opções abaixo:"
+    alert: "Preencha os campos corretamente"
+  
+  links:
+    add_a_product: "Adicione um produto"
+    edit: "Editar"
+    show: "Voltar"
+    delete: "Excluir"
+    back: "Voltar"
+    new: "Novo"
+    new_sale: "Nova venda"
+    new_product: "Novo Produto" 
+    new_client: "Novo Cliente" 

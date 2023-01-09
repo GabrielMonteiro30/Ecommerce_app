@@ -1,0 +1,40 @@
+<div class="d-flex"> 
+
+  <div class="col-10">
+    <h1><%= Product.model_name.human(count: @products.count) %></h1>
+  </div>
+  
+  <div class="col-2">
+    <%= link_to t('links.new_product'), new_product_path, class:"btn btn-primary float-right" %>
+  </div>
+  
+</div>
+
+</br>
+
+<table class="table table-hover">
+  <thead class="table-dark">
+    <tr>
+      <th><%= @products.human_attribute_name(:name) %></th>
+      <th><%= @products.human_attribute_name(:description) %></th>
+      <th><%= @products.human_attribute_name(:price) %></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.name %></td>
+        <td><%= product.description %></td>
+        <td><%= product.price %></td>
+        <td><%= link_to t('links.edit'), edit_product_path(product), class: "btn btn-primary" %></td>
+        <td><%= link_to t('links.delete'), product, method: :delete, data: { confirm: t('messages.confirm')}, class: "btn btn-danger" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+

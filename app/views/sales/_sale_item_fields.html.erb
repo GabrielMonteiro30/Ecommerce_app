@@ -1,0 +1,14 @@
+<div class="form-group nested-fields">
+  <fieldset style="display:flex; align-items: flex-end; gap: 12px">
+    <div class="w-50">
+      <%= f.label :product_id %>
+      <%= f.hidden_field :_destroy %>
+      <%= f.select(:product_id, Product.all.collect {|u| [u.name, u.id]}, { prompt: 'Selecione' }, { class: "form-control" } ) %>
+    </div>
+    
+    <div>
+      <%= link_to t("links.delete"), "#", { style: "float:right", class: 'remove-fields btn btn-danger' } %>
+    </div>
+    
+  </fieldset>
+</div>

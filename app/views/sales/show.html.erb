@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <td><%= @sale.client.name %></td>
+  <strong>Client:</strong>
+  <%= @sale.client_id %>
+</p>
+
+<p>
+  <td><%= @sale.products.name %></td>
+  <strong>Product:</strong>
+  <%= @sale.product_id %>
+</p>
+
+<%= link_to 'Editar', edit_sale_path(@sale) %> |
+<%= link_to 'Voltar', sales_path %>

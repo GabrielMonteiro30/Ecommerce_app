@@ -1,0 +1,51 @@
+<%= form_for @sale do |form| %>
+  <% if sale.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= t("messages.alert")%></h2>
+      <ul>
+      <% sale.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="field">
+    <%= form.label :client_id %>
+    <%= form.select("client_id", @client_option, { include_blank: "Selecione..." }, class:"form-control w-50") %>
+  </div>
+  
+  <div class="field">
+    <%= form.fields_for :sale_items do |f| %>
+      <%= render 'sale_item_fields', f: f %>
+    <% end %>
+  </div>
+    <%= link_to_add_fields t("links.add_a_product"),form, :sale_items%>
+</p>
+
+  <div class="actions">
+    <%= form.submit nil, class: "btn btn-primary"%>
+    <%= link_to t('links.show'), sales_path, class: "btn btn-primary"%>
+  </div>
+<% end %>
+
+</p>
+
+<script>
+
+$('form').on('click', '.remove-fields', function(event) {
+  console.log('clicked')
+    $(this).prev('input[type=hidden]').val('1');
+    $(this).closest('fieldset').hide();
+    return event.preventDefault();
+  });
+  
+$('form').on('click', '.add_fields', function(event) {
+    console.log('clicked!')
+     var regexp, time;
+     time = new Date().getTime();
+     regexp = new RegExp($(this).data('id'), 'g');
+     $(this).before($(this).data('fields').replace(regexp, time));
+     return event.preventDefault();
+    });
+</script>

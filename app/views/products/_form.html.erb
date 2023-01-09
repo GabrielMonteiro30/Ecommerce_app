@@ -1,0 +1,41 @@
+<%= form_for @product, :html => {:multipart => true} do |form| %>
+  <% if product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%="Preencha os campos corretamente"%></h2>
+      <ul>
+      <% product.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :name %>
+    <%= form.text_field :name, class:"form-control w-50", placeholder:"Nome"%>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :description %>
+    <%= form.text_field :description, class:"form-control w-50", placeholder:"Descrição" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :price %>
+    <%= form.text_field :price, class:"form-control w-50", placeholder:"Preço" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :upload %>
+    <%= form.file_field :upload, class:"form-control w-50" %>
+  </div>
+
+</p>
+
+  <div class="actions">
+    <%= form.submit nil, class: "btn btn-primary" %>
+    <%= link_to t('links.back'), products_path, { style:"float:up",  class: "btn btn-primary" } %>
+  </div>
+<% end %>
+ 
+</p>

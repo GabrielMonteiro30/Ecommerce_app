@@ -1,0 +1,51 @@
+'pt-BR':
+  activerecord:
+    models:
+      client:
+        one: Cliente
+        other: Clientes
+      product:
+        one: Produto
+        other: Produtos
+      sale:
+        one: Venda
+        other: Vendas
+      admin: 
+        one: Administrador
+        other: Administradores
+      user: 
+        one: Usuário
+        other: Usuários
+        
+    attributes:
+      client:
+        id: Código
+        name: Nome
+        email: Email
+        birth_date: Data de Nascimento
+        updated_at: Atualizado em
+        created_at: Criado em
+      product:
+        id: Código
+        name: Nome
+        description: Descrição
+        price: Preço
+        updated_at: Atualizado em
+        created_at: Criado em
+      sale:
+        client: Cliente
+        product: Produto
+        client_id: Cliente
+        product_id: Produto
+      admin:
+        id: Código
+        email: Email
+        created_at: Criado em
+        updated_at: Atualizado em
+      user:
+        id: Código
+        email: Email
+        created_at: Criado em
+        updated_at: Atualizado em
+    
+      

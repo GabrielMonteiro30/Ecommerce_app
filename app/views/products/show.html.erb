@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<form>
+
+  <div class="form-group">
+    <%= label_tag nil, @product.class.human_attribute_name(:name) %>
+    <%= text_field_tag nil, @product.name, class:"form-control", disabled: true %>
+  </div>
+  
+
+  <div class="form-group">
+    <%= label_tag nil, @product.class.human_attribute_name(:description) %>
+    <%= text_field_tag nil, @product.description, class:"form-control", disabled: true %>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag nil, @product.class.human_attribute_name(:price) %>
+    <%= text_field_tag nil, @product.price, class:"form-control", disabled: true %> 
+  </div>
+  
+  <p>
+    <%= "Upload" %>
+  </p>
+
+  <p>
+    <%= image_tag @product.upload.url %>
+  <p>
+
+</form>
+
+</p>
+
+<%= link_to t('links.edit'), edit_product_path(@product), class:"btn btn-primary" %> |
+<%= link_to t('links.back'), products_path, class:"btn btn-primary" %>

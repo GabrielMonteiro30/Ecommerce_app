@@ -1,0 +1,37 @@
+<div class=" d-flex">
+
+  <div class="col-10">
+    <h1><%= Client.model_name.human(count: @clients.count)%></h1>
+  </div>
+  
+  <div class="col-0">
+    <%= link_to t('links.new_client'), new_client_path, class:"btn btn-primary float-rigth" %>
+  </div>
+</div>
+
+</br>
+
+<table class="table table-hover">
+  <thead class="table-dark">
+    <tr>
+      <th><%= @clients.human_attribute_name(:name) %></th>
+      <th><%= @clients.human_attribute_name(:email) %></th>
+      <th><%= @clients.human_attribute_name(:birth_date) %></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @clients.each do |client| %>
+      <tr>
+        <td><%= client.name %></td>
+        <td><%= client.email %></td>
+        <td><%= client.birth_date %></td>
+        <td><%= link_to t('links.edit'), edit_client_path(client), class: "btn btn-primary" %></td>
+        <td><%= link_to t('links.delete'), client, method: :delete, data: { confirm: t('messages.confirm')}, class: "btn btn-danger"%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
